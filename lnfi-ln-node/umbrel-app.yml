@@ -14,16 +14,16 @@ website: "https://devoflnfi.unift.xyz/"
 dependencies: []
 repo: "https://github.com/lnfi-network/nostr-wrapper"
 support: "https://github.com/lnfi-network/nostr-wrapper/issues"
-icon: https://getumbrel.github.io/umbrel-apps-gallery/bitcoin/icon.svg
+icon: https://devoflnfi.unift.xyz/gift_banner/icon.svg
 port: 8090
 ports:
   - 10009
   - 8090
   - 8443
 gallery:
-  - https://devoflnfi.unift.xyz/static/media/gift-banner.67f9b07f0da1665588c2.png
-  - https://devoflnfi.unift.xyz/static/media/gift-banner.67f9b07f0da1665588c2.png
-  - https://devoflnfi.unift.xyz/static/media/gift-banner.67f9b07f0da1665588c2.png
+  - https://devoflnfi.unift.xyz/gift_banner/01.jpg
+  - https://devoflnfi.unift.xyz/gift_banner/02.jpg
+  - https://devoflnfi.unift.xyz/gift_banner/03.jpg
 path: ""
 defaultUsername: ""
 defaultPassword: ""
