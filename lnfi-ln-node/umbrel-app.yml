@@ -1,0 +1,33 @@
+manifestVersion: 1
+id: lnf-ln-node
+category: Wrapper
+name: LN Node v1.0
+version: "1.0.0"
+tagline: Your Gateway to LightningFi
+description: >
+  LN Node is a next-generation Bitcoin Lightning Network node that earns rewards by providing liquidity and facilitating Bitcoin and Taproot Assets transactions on the Lightning Network. It’s the first-ever node with built-in mining rewards, transforming your Lightning node into a high-yield virtual mining machine—no extra hardware or technical expertise required!
+  With zero technical setup, the LN Node makes it effortless for anyone to run a Lightning node, earn passive income, and take full control of their assets.
+  Designed for true self-custody, it empowers users to own their digital identity while strengthening the decentralized Lightning Network.
+   Own your node, earn rewards, and power the future of Lightning.
+
+website: "https://devoflnfi.unift.xyz/"
+dependencies: []
+repo: "https://github.com/lnfi-network/nostr-wrapper"
+support: "https://github.com/lnfi-network/nostr-wrapper/issues"
+icon: https://getumbrel.github.io/umbrel-apps-gallery/bitcoin/icon.svg
+port: 8090
+ports:
+  - 10009
+  - 8090
+  - 8443
+gallery:
+  - https://devoflnfi.unift.xyz/static/media/gift-banner.67f9b07f0da1665588c2.png
+  - https://devoflnfi.unift.xyz/static/media/gift-banner.67f9b07f0da1665588c2.png
+  - https://devoflnfi.unift.xyz/static/media/gift-banner.67f9b07f0da1665588c2.png
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+releaseNotes: ""
+developer: lnfi network
+submitter: Umbrel
+submission: https://github.com/getumbrel/umbrel-apps/pull/1106

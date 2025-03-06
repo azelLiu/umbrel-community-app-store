@@ -1,0 +1,70 @@
+version: "3.8"
+services:
+  wrapper:
+    image: azelliu/azel-wrapper:v2
+    container_name: ${LIT_NAME}-wrapper-${LIT_NETWORK}
+    environment:
+      SERVICENAME: ${LIT_NAME:-lightning}
+      GRPC_HOST: ${GRPC_HOST:-${LIT_NAME}-litd-${LIT_NETWORK}:10009}
+      CERT_FILE_PATH: ${CERT_FILE_PATH:-/root/.lnd/tls.cert}
+      MACAROON_FILE_PATH: ${MACAROON_FILE_PATH}
+      NOSTR_RELAY_URI: ${NOSTR_RELAY_URI:-wss://relay.lnfi.network}
+      NETWORK: ${LIT_NETWORK}
+      PORT: ${PORT}
+      DEBUG: ${DEBUG}
+      NOSTR_NODE_HOST: ${NOSTR_NODE_HOST}
+      NOSTR_NODE_NPUBKEY: ${NOSTR_NODE_NPUBKEY}
+      NO_TLS: ${NO_TLS:-1}
+      OFFICIAL_RELAY_URI: ${OFFICIAL_RELAY_URI:-wss://relay.lnfi.network}
+      LNFI_NODE_API_BASE_URL: ${LNFI_NODE_API_BASE_URL}
+      UNISERVE_SERVER_HOST: ${UNISERVE_SERVER_HOST}
+      ORACLE_SERVER_HOST: ${ORACLE_SERVER_HOST}
+      FLASH_SITE_BASE_URI: ${FLASH_SITE_BASE_URI}
+      LIT_NETWORK: ${LIT_NETWORK}
+      LIT_TLSEXTRADOMAIN: ${LIT_TLSEXTRADOMAIN}
+      LIT_TLSEXTRAIP: ${LIT_TLSEXTRAIP}
+      TAPD_TLSEXTRADOMAIN: ${TAPD_TLSEXTRADOMAIN}
+      TAPD_TLSEXTRAIP: ${TAPD_TLSEXTRAIP}
+      LIT_UI_PASSWORD: ${LIT_UI_PASSWORD}
+      LND_ALIAS: ${LND_ALIAS}
+      LND_EXTERNALIP: ${LND_EXTERNALIP}
+      BITCOIND_RPCHOST: ${BITCOIND_RPCHOST}
+      BITCOIND_RPCUSER: ${BITCOIND_RPCUSER}
+      BITCOIND_RPCPASS: ${BITCOIND_RPCPASS}
+      BITCOIND_ZMQBLOCK: ${BITCOIND_ZMQBLOCK}
+      BITCOIND_ZMQRAWTX: ${BITCOIND_ZMQRAWTX}
+      TOR_SOCKS: ${TOR_SOCKS}
+      TOR_CONTROL: ${TOR_CONTROL}
+      LOOP_SERVER: ${LOOP_SERVER}
+      LIT_PORT_HTTPS: ${LIT_PORT_HTTPS}
+      LIT_PORT_LND: ${LIT_PORT_LND}
+      LIT_DATA_PATH: ${LIT_DATA_PATH}
+      TOR_PATH: ${TOR_PATH}
+    volumes:
+      - /root/.lit
+      - /root/.lnd
+      - /root/.loop
+      - /root/.tapd
+      - /root/.tor
+      - /etc/tor/torrc
+      - /root/.link
+    expose:
+      - "9735"
+      - "8443"
+      - "10009"
+    ports:
+      - "${LIT_PORT_HTTPS}:8443"
+      - "${LIT_PORT_LND}:10009"
+      - "8090:8090"
+    restart: always
+    networks:
+      - umbrel_main_network
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "3"
+        max-size: "50m"
+
+networks:
+  umbrel_main_network:
+    external: true
